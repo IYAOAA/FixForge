@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Hon-Isyaku-Bawa-Na-abi-2025</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #2b3d34;
+      background: url('images/Chairman.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: rgba(43, 61, 52, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      color: #fff;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .nav a {
+      color: #fff;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav a.active, .nav a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-section {
+      flex: 1;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2b3d34;
+    }
+
+    .contact-info {
+      margin: 20px 0;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: left;
+    }
+
+    .contact-info strong {
+      color: darkred;
+    }
+
+    .contact-form {
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .contact-form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: 600;
+    }
+
+    .contact-form input, 
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      background: darkred;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #a00000;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 10px;
+      background: rgba(43, 61, 52, 0.9);
+      color: #fff;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Hon-Isyaku-Bawa-Na-abi-2025</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <main class="contact-section">
+    <h1>Contact Us</h1>
+
+    <div class="contact-info">
+      <p><strong>Office Address:</strong> No. 15 Main Street, Central City, Nigeria</p>
+      <p><strong>Phone:</strong> +234 812 345 6789</p>
+      <p><strong>Email:</strong> info@isyakubawanaabi2025.ng</p>
+    </div>
+
+    <form class="contact-form" action="#" method="post">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Hon-Isyaku-Bawa-Na-abi | Built with purpose by Y. A. Ibrahim</p>
+  </footer>
+</body>
+</html>

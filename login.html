@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Hon-Isyaku-Bawa-Na'abi-2025</title>
+ <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .login-container {
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #2b3d34;
+    }
+
+    .login-container input[type="email"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background: #2b3d34;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .login-links {
+      margin-top: 15px;
+    }
+
+    .login-links a {
+      display: block;
+      color: #8B0000;
+      margin: 5px 0;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .close-btn {
+      color: #8B0000;
+      font-weight: bold;
+      cursor: pointer;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+<header class="header">
+  <div class="logo">Hon-Isyaku-Bawa-Na'abi-2025</div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="register.html">Register</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="home">
+  <div class="login-container">
+    <h2>Login to Your Account</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Enter Email" required />
+      <input type="password" id="password" placeholder="Enter Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <div class="login-links">
+      <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+      <a href="register.html">Don't have an account? Register</a>
+    </div>
+  </div>
+</main>
+
+<!-- Forgot Password Modal -->
+<div class="modal" id="forgotModal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h3>Reset Your Password</h3>
+    <input type="email" id="resetEmail" placeholder="Enter your email" required />
+    <button id="sendResetLink">Send Reset Link</button>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>&copy; Hon-Isyaku-Bawa-Na-abi-2025 | Built with purpose by Y. A. Ibrahim</p>
+</footer>
+
+<script>
+  const forgotPasswordLink = document.getElementById('forgotPasswordLink');
+  const forgotModal = document.getElementById('forgotModal');
+  const closeModal = document.getElementById('closeModal');
+  const sendResetLink = document.getElementById('sendResetLink');
+  const loginForm = document.getElementById('loginForm');
+
+  forgotPasswordLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    forgotModal.style.display = 'flex';
+  });
+
+  closeModal.addEventListener('click', () => {
+    forgotModal.style.display = 'none';
+  });
+
+  sendResetLink.addEventListener('click', () => {
+    const email = document.getElementById('resetEmail').value;
+    if (email) {
+      alert(`A reset link has been sent to ${email}`);
+      forgotModal.style.display = 'none';
+    } else {
+      alert('Please enter your email');
+    }
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === forgotModal) {
+      forgotModal.style.display = 'none';
+    }
+  });
+
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (email === "test@applicant.com" && password === "123456") {
+      alert("Login Successful! Redirecting to your dashboard...");
+      window.location.href = "dashboard.html";
+    } else {
+      alert("Invalid Email or Password. Please try again.");
+    }
+  });
+</script>
+</body>
+</html>
