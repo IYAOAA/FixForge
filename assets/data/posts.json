@@ -1,0 +1,20 @@
+[
+  {
+    "id": "windows-update",
+    "title": "How to Stop Windows Auto Update in 2 Minutes",
+    "image": "assets/images/windows-update.jpg",
+    "description": "Quick tutorial to turn off automatic updates on Windows. Linked video included.",
+    "video": "https://www.youtube.com/embed/yourvideoid",
+    "date": "Jan 15, 2025",
+    "content": "<p>This step-by-step guide shows you how to disable Windows automatic updates in just two minutes. It’s quick, easy, and safe.</p><ol><li>Open Settings.</li><li>Go to Update & Security.</li><li>Pause updates.</li></ol>"
+  },
+  {
+    "id": "phone-battery",
+    "title": "Improve Phone Battery Life",
+    "image": "assets/images/phone-battery.jpg",
+    "description": "Tips to squeeze more time out of your smartphone battery.",
+    "video": "https://www.youtube.com/embed/yourvideoid2",
+    "date": "Jan 20, 2025",
+    "content": "<p>Battery life tips…</p>"
+  }
+]
