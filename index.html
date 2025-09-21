@@ -2,31 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hon-Isyaku-Bawa-Na-abi-2025</title>
-
-  <!-- External CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GizmoClinic – Blog</title>
   <link rel="stylesheet" href="assets/css/styles.css">
-
-  <!-- Inline Styles (Move later to styles.css if needed) -->
   <style>
     body {
+      background: #fff;
+      color: #333;
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      color: #2b3d34;
-      background: url('images/Chairman.jpg') no-repeat center center/cover;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      padding: 0;
     }
 
-    .header {
-      background: rgba(43, 61, 52, 0.9);
+    header {
+      background: #222;
+      color: #fff;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
-      color: #fff;
     }
 
     .logo {
@@ -34,93 +28,120 @@
       font-weight: bold;
     }
 
-    .nav a {
-      color: #fff;
-      margin-left: 15px;
-      text-decoration: none;
-      font-weight: 500;
+    .logo span {
+      color: #4cafef;
     }
 
-    .nav a:hover {
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
       text-decoration: underline;
     }
 
-    .home {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px 20px;
-      background: rgba(255, 255, 255, 0.8);
-      margin: 20px;
-      border-radius: 10px;
+    .blog-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
-    .home h1 {
-      font-size: 2.5rem;
+    .blog-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .post {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .post:hover {
+      transform: translateY(-4px);
+    }
+
+    .post img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
       margin-bottom: 15px;
     }
 
-    .home p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin-bottom: 20px;
+    .post h3 {
+      margin-top: 0;
     }
 
-    .btn {
-      background: #2b3d34;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
+    .post a {
       text-decoration: none;
-      cursor: pointer;
-      transition: background 0.3s;
+      color: #4cafef;
+      font-weight: bold;
     }
 
-    .btn:hover {
-      background: #8B0000;
-    }
-
-    .footer {
+    footer {
       text-align: center;
-      padding: 10px;
-      background: rgba(43, 61, 52, 0.9);
-      color: #fff;
-      font-size: 0.9rem;
+      padding: 20px;
+      background: #f0f0f0;
+      color: #555;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo">Hon-Isyaku-Bawa-Na-abi-2025</div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="register.html">Register</a>
-      <a href="login.html">Login</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="home">
-    <h1>Welcome to Hon-Isyaku-Bawa-Na-abi 2025</h1>
-    <p>
-      This website is not just a digital presence—it is a platform where vision meets action,
-      where every voice matters, and where together we shape a brighter future.
-    </p>
-    <a href="register.html" class="btn">Join the Movement</a>
-  </main>
+<header>
+  <div class="logo">GizmoClinic<span>.com</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>&copy; 2025 Hon-Isyaku-Bawa-Na-abi | Built with purpose by Y. A. Ibrahim</p>
-  </footer>
-  <script src="assets/js/home.js"></script>
+<main>
+  <div class="blog-container">
+    <div class="blog-header">
+      <h1>Latest Fixes & How-Tos</h1>
+      <p>Watch, read, and learn how to solve your gadget issues fast.</p>
+    </div>
+
+    <div class="posts">
+      <!-- Post 1 -->
+      <div class="post">
+        <img src="assets/images/windows-update.jpg" alt="Stop Windows Auto Update">
+        <h3>How to Stop Windows Auto Update in 2 Minutes</h3>
+        <p>Quick tutorial to turn off automatic updates on Windows. Linked video included.</p>
+        <a href="post1.html">Read More</a>
+      </div>
+
+      <!-- Post 2 -->
+      <div class="post">
+        <img src="assets/images/phone-battery.jpg" alt="Improve Phone Battery">
+        <h3>Improve Phone Battery Life</h3>
+        <p>Tips to squeeze more time out of your smartphone battery.</p>
+        <a href="post2.html">Read More</a>
+      </div>
+
+      <!-- Add more posts here -->
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 GizmoClinic</p>
+</footer>
+
 </body>
 </html>
