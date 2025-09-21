@@ -1,20 +1,22 @@
 [
   {
-    "id": "windows-update",
     "title": "How to Stop Windows Auto Update in 2 Minutes",
-    "image": "assets/images/windows-update.jpg",
-    "description": "Quick tutorial to turn off automatic updates on Windows. Linked video included.",
-    "video": "https://www.youtube.com/embed/yourvideoid",
-    "date": "Jan 15, 2025",
-    "content": "<p>This step-by-step guide shows you how to disable Windows automatic updates in just two minutes. It’s quick, easy, and safe.</p><ol><li>Open Settings.</li><li>Go to Update & Security.</li><li>Pause updates.</li></ol>"
+    "excerpt": "Quick guide to disable automatic Windows updates.",
+    "content": "<p>Here’s the full step-by-step tutorial. You’ll learn how to disable Windows auto updates using Settings and Group Policy Editor. <strong>Follow carefully</strong>…</p><ol><li>Open Settings.</li><li>Go to Update & Security.</li><li>Disable automatic updates.</li></ol>",
+    "video": "https://www.youtube.com/embed/yourVideoID",
+    "tags": ["Windows", "Update"],
+    "date": "2025-09-20",
+    "image": "assets/img/windows-update.jpg",
+    "link": "solution.html?id=1"
   },
   {
-    "id": "phone-battery",
-    "title": "Improve Phone Battery Life",
-    "image": "assets/images/phone-battery.jpg",
-    "description": "Tips to squeeze more time out of your smartphone battery.",
-    "video": "https://www.youtube.com/embed/yourvideoid2",
-    "date": "Jan 20, 2025",
-    "content": "<p>Battery life tips…</p>"
+    "title": "Fix Phone Battery Draining Fast",
+    "excerpt": "Tips to make your phone battery last longer.",
+    "content": "<p>Complete guide to saving battery life on Android and iOS phones. These methods work across most devices…</p>",
+    "video": "https://www.youtube.com/embed/yourVideoID2",
+    "tags": ["Phones", "Battery"],
+    "date": "2025-09-21",
+    "image": "assets/img/phone-battery.jpg",
+    "link": "solution.html?id=2"
   }
 ]

@@ -1,79 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GizmoClinic – Blog</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <style>
-    body {
-      background: #fff;
-      color: #333;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {font-size: 1.4rem;font-weight: bold;}
-    .logo span {color: #4cafef;}
-    nav a {color: #fff;text-decoration: none;margin-left: 15px;font-size: 1rem;}
-    nav a:hover {text-decoration: underline;}
-    .blog-container {max-width: 900px;margin: 40px auto;padding: 0 20px;}
-    .blog-header {text-align: center;margin-bottom: 40px;}
-    .posts {display: grid;grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));gap: 20px;}
-    .post {background: #f9f9f9;padding: 20px;border-radius: 8px;box-shadow: 0 2px 6px rgba(0,0,0,0.05);transition: transform 0.2s ease;}
-    .post:hover {transform: translateY(-4px);}
-    .post img {width: 100%;height: 150px;object-fit: cover;border-radius: 6px;margin-bottom: 15px;}
-    .post h3 {margin-top: 0;}
-    .post a {text-decoration: none;color: #4cafef;font-weight: bold;}
-    footer {text-align: center;padding: 20px;background: #f0f0f0;color: #555;margin-top: 40px;}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>GizmoClinic – Tech Fix Blog</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+  }
+  .container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+  .search-box {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  .post-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+  }
+  .post-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  .post-card .content {
+    padding: 15px;
+    flex: 1;
+  }
+  .tags {
+    margin-top: 10px;
+  }
+  .tag {
+    display: inline-block;
+    background: #e0e0e0;
+    padding: 3px 8px;
+    margin: 0 5px 5px 0;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  .load-more {
+    display: block;
+    width: 200px;
+    margin: 30px auto;
+    padding: 10px;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
 </head>
 <body>
 <header>
-  <div class="logo">GizmoClinic<span>.com</span></div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <h1>GizmoClinic</h1>
+  <p>Find and fix your gadgets with easy guides</p>
 </header>
 
-<main>
-  <div class="blog-container">
-    <div class="blog-header">
-      <h1>Latest Fixes & How-Tos</h1>
-      <p>Watch, read, and learn how to solve your gadget issues fast.</p>
-    </div>
-    <div class="posts" id="postList"></div>
-  </div>
-</main>
-
-<footer>
-  <p>&copy; 2025 GizmoClinic</p>
-</footer>
+<div class="container">
+  <input type="search" id="searchBox" class="search-box" placeholder="Search posts...">
+  <div class="post-grid" id="postGrid"></div>
+  <button class="load-more" id="loadMoreBtn">Load More</button>
+</div>
 
 <script>
-fetch('assets/data/posts.json')
+let allPosts = [];
+let displayedPosts = 0;
+const perPage = 6;
+const postGrid = document.getElementById('postGrid');
+const loadMoreBtn = document.getElementById('loadMoreBtn');
+const searchBox = document.getElementById('searchBox');
+
+// Fetch posts
+fetch('posts.json')
   .then(res => res.json())
-  .then(posts => {
-    const container = document.getElementById('postList');
-    container.innerHTML = posts.map(post => `
-      <div class="post">
-        <img src="${post.image}" alt="${post.title}">
-        <h3>${post.title}</h3>
-        <p>${post.description}</p>
-        <a href="post.html?id=${post.id}">Read More</a>
-      </div>
-    `).join('');
+  .then(data => {
+    allPosts = data;
+    renderPosts();
   });
+
+function renderPosts(filtered = null) {
+  const list = filtered || allPosts;
+  const slice = list.slice(0, displayedPosts + perPage);
+  displayedPosts = slice.length;
+  postGrid.innerHTML = slice.map(post => `
+    <div class="post-card">
+      <img src="${post.image}" alt="${post.title}">
+      <div class="content">
+        <h3>${post.title}</h3>
+        <p>${post.excerpt}</p>
+        <div class="tags">
+          ${post.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+        </div>
+        <a href="${post.link}">Read more</a>
+      </div>
+    </div>
+  `).join('');
+  loadMoreBtn.style.display = displayedPosts >= list.length ? 'none' : 'block';
+}
+
+loadMoreBtn.addEventListener('click', () => {
+  renderPosts();
+});
+
+searchBox.addEventListener('input', e => {
+  const q = e.target.value.toLowerCase();
+  const filtered = allPosts.filter(p =>
+    p.title.toLowerCase().includes(q) ||
+    p.tags.some(tag => tag.toLowerCase().includes(q))
+  );
+  displayedPosts = 0;
+  renderPosts(filtered);
+});
 </script>
 </body>
 </html>
